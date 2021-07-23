@@ -12,14 +12,22 @@ article,main,footer {
 main {
 	padding-top: 5%;
 }
-.nav-class {
-	color: greenyellow;
-}
 a {
 	color: slateblue;
 }
 td {
 	padding: 5%;
+}
+pre {
+	background-color: #1f252d;
+	border: 2px solid lightblue;
+	border-radius: 5px;
+	white-space: pre-wrap;
+	margin: auto;
+	max-width: 300px;
+}
+code {
+	color: orange;
 }
 .text-left {float:left}
 .text-right {
@@ -33,4 +41,6 @@ td {
 	width: 150px;
 	height: 150px;
 }
-	
+.nav-class {
+	color: greenyellow;
+}
