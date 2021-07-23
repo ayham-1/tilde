@@ -1,0 +1,36 @@
+@font-face { font-family: mechanical; src: url('font.otf'); }
+* {
+	color: #ddd;
+	font-family: mechanical;
+	font-size: 13px;
+}
+article,main,footer {
+	width: 80%;
+	padding-left: 10%;
+	padding-right: 10%;
+}
+main {
+	padding-top: 5%;
+}
+.nav-class {
+	color: greenyellow;
+}
+a {
+	color: slateblue;
+}
+td {
+	padding: 5%;
+}
+.text-left {float:left}
+.text-right {
+	float:right;
+}
+.header-right {
+	display: inline;
+	float: right;
+}
+.pfp {
+	width: 150px;
+	height: 150px;
+}
+	
