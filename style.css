@@ -3,7 +3,7 @@
 	color: #ddd;
 	font-family: mechanical;
 }
-article,main,footer {
+article,main {
 	width: 80%;
 	padding-left: 10%;
 	padding-right: 10%;
@@ -11,6 +11,9 @@ article,main,footer {
 }
 main {
 	padding-top: 5%;
+}
+footer {
+		text-align: center;
 }
 a {
 	color: slateblue;
@@ -22,9 +25,8 @@ pre {
 	background-color: #1f252d;
 	border: 2px solid lightblue;
 	border-radius: 5px;
-	white-space: pre-wrap;
+	white-space: pre;
 	margin: auto;
-	max-width: 300px;
 	text-align: center;
 }
 code {
