@@ -1,49 +1,49 @@
 @font-face { font-family: mechanical; src: url('font.otf'); }
 * {
-	color: #ddd;
-	font-family: mechanical;
+		color: #ddd;
+		font-family: mechanical;
 }
 article,main {
-	width: 80%;
-	padding-left: 10%;
-	padding-right: 10%;
-	font-size: 13px;
+		width: 80%;
+		padding-left: 10%;
+		padding-right: 10%;
+		font-size: 13px;
 }
 main {
-	padding-top: 5%;
+		padding-top: 5%;
 }
 footer {
 		text-align: center;
 }
 a {
-	color: slateblue;
+		color: slateblue;
 }
 td {
-	padding: 5%;
+		padding: 5%;
 }
 pre {
-	background-color: #1f252d;
-	border: 2px solid lightblue;
-	border-radius: 5px;
-	white-space: pre;
-	margin: auto;
-	text-align: center;
+		background-color: #1f252d;
+		border: 2px solid lightblue;
+		border-radius: 5px;
+		white-space: pre;
+		margin: auto;
+		text-align: center;
 }
 code {
-	color: orange;
+		color: orange;
 }
 .text-left {float:left}
 .text-right {
-	float:right;
+		float:right;
 }
 .header-right {
-	display: inline;
-	float: right;
+		display: inline;
+		float: right;
 }
 .pfp {
-	width: 150px;
-	height: 150px;
+		width: 150px;
+		height: 150px;
 }
 .nav-class {
-	color: greenyellow;
+		color: greenyellow;
 }
