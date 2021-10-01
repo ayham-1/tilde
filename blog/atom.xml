@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+<title type="text">ayham's blog</title>
+<subtitle type="text">probably interesting stuff</subtitle>
+<updated>2021-10-01T19:25:14Z</updated>
+<link rel="alternate" type="text/html" href="https://tilde.team/~ayham/blog"/>
+<id>https://tilde.team/~ayham/blog/atom.xml</id>
+<link rel="self" type="application/atom+xml" href="https://tilde.team/~ayham/blog/atom.xml"/>
+<entry>
+<title type="text">The Beginning of a series!</title>
+<link rel="alternate" type="text/html" href="https://tilde.team/~ayham/blog/first-article.html"/>
+<id>https://tilde.team/~ayham/blog/first-article.html</id>
+<published>2021-10-01T19:23:41Z</published>
+<updated>2021-10-01T19:23:41Z</updated>
+<author><name>ayham</name></author>
+<summary type="text">This would be the beginning of my all-new article series. I would be writing 
+about software I make and use, with the occasional school essay turned article.</summary>
+</entry>
+</feed>

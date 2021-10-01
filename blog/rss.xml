@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+<channel>
+<title>ayham's blog</title>
+<link>https://tilde.team/~ayham/blog</link>
+<description>probably interesting stuff</description>
+<item>
+<title>The Beginning of a series!</title>
+<link>https://tilde.team/~ayham/blog/first-article.html</link>
+<guid>https://tilde.team/~ayham/blog/first-article.html</guid>
+<pubDate>Fri, 01 Oct 2021 19:23:41 +0300</pubDate>
+<description>This would be the beginning of my all-new article series. I would be writing 
+about software I make and use, with the occasional school essay turned article.</description>
+</item>
+</channel>
+</rss>
