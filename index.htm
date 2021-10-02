@@ -8,7 +8,10 @@
 				src="//ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"
 				type="text/javascript"></script>
 		<script type="text/javascript">
-			$(document).ready(function() { $("#partial_header").load("partials/header.htm"); }); </script>
+			$(document).ready(function() { 
+							$("#partial_header").load("partials/header.htm"); }
+							$("#partial_footer").load("partials/footer.htm"); }); 
+		</script>
 	</head>
 	<body style="background:black">
 		<article>
@@ -66,16 +69,7 @@
 						</td>
 					</table>
 				</main>
-				<footer align="center">
-					<nav>
-						<a class="nav-class"
-						   href="https://tilde.site/~ayham/index.htm">[ home ]</a>
-						<a class="nav-class"
-						   href="https://tilde.site">[ tilde ]</a>
-						<a class="nav-class"
-						   href="blog/rss.xml">[ rss ]</a>
-					</nav>
-				</footer>
+				<footer id="partial_footer"></footer>
 		</article>
 	</body>
 </html>
