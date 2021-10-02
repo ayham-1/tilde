@@ -1,4 +1,3 @@
-@font-face { font-family: mechanical; src: url('font.otf'); }
 :root {
 	--genwidth: 850px ;
 	--navwidth: 175px ;
@@ -13,6 +12,7 @@
 	--bg: rgba(0,0,0,0.4) ;
 	--altbg: rgba(0,0,0,0.4) ;
 }
+@font-face { font-family: mechanical; src: url('font.otf'); }
 
 body {
 		font-family: mechanical;
