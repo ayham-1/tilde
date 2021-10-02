@@ -1,16 +1,31 @@
 @font-face { font-family: mechanical; src: url('font.otf'); }
-* {
-		color: #ddd;
-		font-family: mechanical;
+:root {
+	--genwidth: 850px ;
+	--navwidth: 175px ;
+	--fg: #ddd ;
+	--altfg: #ccc ;
+	--fgemph: white ;
+	--bg: #111 ;
+	--altbg: #222 ;
+	--emph: #333 ;
+	--bordercolor: #555 ;
+	--limish: #0e0 ;
+	--bg: rgba(0,0,0,0.4) ;
+	--altbg: rgba(0,0,0,0.4) ;
 }
-article,main {
-		width: 80%;
-		padding-left: 10%;
-		padding-right: 10%;
-		//font-size: 13px;
+
+body {
+		font-family: mechanical;
+		background: linear-gradient(#000040, #000000) fixed ;
+		margin-bottom: 100px;
 }
 main {
-		padding-top: 5%;
+		margin: auto;
+		color: var(--fg);
+		background: var(--bg);
+		padding: 1em;
+		border: dashed 1px var(--bordercolor);
+		border-radius: 5px;
 }
 footer {
 		text-align: center;
@@ -18,19 +33,50 @@ footer {
 a {
 		color: slateblue;
 }
-td {
-		padding: 5%;
-}
 pre {
-		background-color: #1f252d;
-		border: 2px solid lightblue;
+		background: #1f252d;
+		border: 1px solid var(--limish);
 		border-radius: 5px;
-		white-space: pre;
-		margin: auto;
-		text-align: center;
+		padding: 1em;
+		margin: 1em;
+		white-space: pre-wrap;
 }
 code {
-		color: orange;
+	background-color: #1f252d;
+	color: var(--limish);
+	overflow-wrap: break-word;
+}
+.resright {
+	display: block;
+	margin: auto;
+	max-width: 90%;
+	max-height: 300px;
+}
+@media (min-width: 55em) {
+
+	.resright, .disappear {
+		display: block ;
+		float: right;
+		padding: 20px ;
+		clear: both ;
+		max-height: 300px ;
+		max-width: 300px ;
+	}
+
+	.resmid {
+		max-height: 300px ;
+		max-width: 300px ;
+	}
+
+	main {
+		max-width: var(--genwidth) ;
+	}
+
+	.column {
+		float: left;
+		width: 50% ;
+	}
+
 }
 .text-left {float:left}
 .text-right {
@@ -39,10 +85,6 @@ code {
 .header-right {
 		display: inline;
 		float: right;
-}
-.pfp {
-		width: 150px;
-		height: 150px;
 }
 .nav-class {
 		color: greenyellow;
