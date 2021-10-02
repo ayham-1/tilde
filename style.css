@@ -52,6 +52,31 @@ code {
 	max-width: 90%;
 	max-height: 300px;
 }
+/* This should be genwidth + (navwidth*2) + padding */
+@media (min-width: 1200px) {
+	nav {
+		float: left ;
+		width: 175px ;
+		position: fixed ;
+		text-align: left ;
+		font-size: large ;
+	}
+	nav::before {
+		content: "Links" ;
+		text-align: center ;
+		display: block ;
+		font-size: large ;
+		color: violet ;
+		text-decoration: underline ;
+		margin-top: .5em ;
+	}
+	nav li {
+		display: block ;
+		text-align: center ;
+		margin: .5em auto ;
+	}
+
+}
 @media (min-width: 55em) {
 
 	.resright, .disappear {
@@ -77,10 +102,6 @@ code {
 		width: 50% ;
 	}
 
-}
-.text-left {float:left}
-.text-right {
-		float:right;
 }
 .header-right {
 		display: inline;
