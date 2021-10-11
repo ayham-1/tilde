@@ -15,31 +15,31 @@
 @font-face { font-family: mechanical; src: url('font.woff'); }
 
 body {
-		font-family: mechanical;
-		background: linear-gradient(#000040, #000000) fixed ;
-		margin-bottom: 100px;
+	font-family: mechanical;
+	background: linear-gradient(#000040, #000000) fixed ;
+	margin-bottom: 100px;
 }
 main {
-		margin: auto;
-		color: var(--fg);
-		background: var(--bg);
-		padding: 1em;
-		border: dashed 1px var(--bordercolor);
-		border-radius: 5px;
+	margin: auto;
+	color: var(--fg);
+	background: var(--bg);
+	padding: 1em;
+	border: dashed 1px var(--bordercolor);
+	border-radius: 5px;
 }
 footer {
-		text-align: center;
+	text-align: center;
 }
 a {
-		color: slateblue;
+	color: slateblue;
 }
 pre {
-		background: #1f252d;
-		border: 1px solid var(--limish);
-		border-radius: 5px;
-		padding: 1em;
-		margin: 1em;
-		white-space: pre-wrap;
+	background: #1f252d;
+	border: 1px solid var(--limish);
+	border-radius: 5px;
+	padding: 1em;
+	margin: 1em;
+	white-space: pre-wrap;
 }
 code {
 	background-color: #1f252d;
@@ -76,12 +76,7 @@ code {
 		float: left;
 		width: 50% ;
 	}
-
 }
-.header-right {
-		display: inline;
-		float: right;
-}
-.nav-class {
-		color: greenyellow;
+nav {
+	color: greenyellow;
 }
