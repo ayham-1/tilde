@@ -57,10 +57,6 @@ code {
 	color: greenyellow;
 }
 @media (min-width: 55em) {
-	.bar {
-		display: flex;
-		flex-wrap: wrap;
-	}
 	.resright, .disappear {
 		display: block ;
 		float: right;
