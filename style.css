@@ -77,6 +77,10 @@ code {
 		width: 50% ;
 	}
 }
+.bar {
+	display: inline;
+	color: greenyellow;
+}
 nav {
 	color: greenyellow;
 }
