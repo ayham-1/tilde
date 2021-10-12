@@ -30,10 +30,6 @@ main {
 footer {
 	text-align: center;
 }
-.bar {
-	display: inline;
-	color: greenyellow;
-}
 a {
 	color: slateblue;
 }
@@ -56,8 +52,15 @@ code {
 	max-width: 90%;
 	max-height: 300px;
 }
+.bar {
+	display: inline;
+	color: greenyellow;
+}
 @media (min-width: 55em) {
-
+	.bar {
+		display: flex;
+		flex-wrap: wrap;
+	}
 	.resright, .disappear {
 		display: block ;
 		float: right;
@@ -66,16 +69,13 @@ code {
 		max-height: 300px ;
 		max-width: 300px ;
 	}
-
 	.resmid {
 		max-height: 300px ;
 		max-width: 300px ;
 	}
-
 	main {
 		max-width: var(--genwidth) ;
 	}
-
 	.column {
 		float: left;
 		width: 50% ;
