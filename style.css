@@ -98,3 +98,9 @@ ul.images li img {
 	height: 200px;
 	padding: 2.5px;
 }
+tr, td {
+    display: block;
+}
+tr {
+    float: left;
+}
