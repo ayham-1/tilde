@@ -73,6 +73,12 @@ code {
 	main {
 		max-width: var(--genwidth) ;
 	}
+	tr, td {
+		display: block;
+	}
+	tr {
+		float: left;
+	}
 }
 
 /* store stuff */
@@ -98,9 +104,4 @@ ul.images li img {
 	height: 200px;
 	padding: 2.5px;
 }
-tr, td {
-    display: block;
-}
-tr {
-    float: left;
-}
+
