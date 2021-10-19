@@ -58,7 +58,14 @@ code {
 }
 
 tr, td {
-	display: table-cell;
+	display: block;
+	text-align: left;
+	float: left;
+	max-width: 100%;
+	margin: auto;
+}
+td {
+	float: none;
 }
 
 @media (min-width: 55em) {
@@ -78,12 +85,25 @@ tr, td {
 		max-width: var(--genwidth) ;
 	}
 	tr, td {
-		display: block;
-		text-align: left;
-		float: left;
-		width: 100%;
+		display: table-cell;
+	}
+	td {
+		float: none;
+	}
+	ul.images {
+		display: flex;
+		flex-direction: row;
+		margin: 0;
+		padding: 0;
+		width: 25em;
+		overflow-x: auto;
+
+		list-style-type: none;
+		transition: -webkit-transform 0.25s ease;
+		transition: transform 0.25s ease;
 	}
 }
+
 
 /* store stuff */
 ul.images {
@@ -91,7 +111,7 @@ ul.images {
 	flex-direction: row;
 	margin: 0;
 	padding: 0;
-	width: 25em;
+	width: 15em;
 	overflow-x: auto;
 
 	list-style-type: none;
