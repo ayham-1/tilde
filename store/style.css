@@ -46,12 +46,35 @@ code {
 	color: var(--limish);
 	overflow-wrap: break-word;
 }
+.resright {
+	display: block;
+	margin: auto;
+	max-width: 90%;
+	max-height: 300px;
+}
+.bar {
+	display: inline;
+	color: greenyellow;
+}
 
 @media (min-width: 55em) {
+	.resright, .disappear {
+		display: block ;
+		float: right;
+		padding: 20px ;
+		clear: both ;
+		max-height: 300px ;
+		max-width: 300px ;
+	}
+	.resmid {
+		max-height: 300px ;
+		max-width: 300px ;
+	}
 	main {
 		max-width: var(--genwidth) ;
 	}
 }
+
 /* store stuff */
 ul.images {
 	display: flex;
