@@ -57,6 +57,10 @@ code {
 	color: greenyellow;
 }
 
+tr, td {
+	display: table-cell;
+}
+
 @media (min-width: 55em) {
 	.resright, .disappear {
 		display: block ;
@@ -75,9 +79,9 @@ code {
 	}
 	tr, td {
 		display: block;
-	}
-	tr {
+		text-align: left;
 		float: left;
+		width: 100%;
 	}
 }
 
