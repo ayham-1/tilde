@@ -1,0 +1,77 @@
+:root {
+	--genwidth: 850px ;
+	--navwidth: 175px ;
+	--fg: #ddd ;
+	--altfg: #ccc ;
+	--fgemph: white ;
+	--bg: #111 ;
+	--altbg: #222 ;
+	--emph: #333 ;
+	--bordercolor: #555 ;
+	--limish: #0e0 ;
+	--bg: rgba(0,0,0,0.4) ;
+	--altbg: rgba(0,0,0,0.4) ;
+}
+@font-face { font-family: mechanical; src: url('font.woff'); }
+
+body {
+	font-family: mechanical;
+	background: linear-gradient(#000040, #000000) fixed ;
+	margin-bottom: 100px;
+}
+main {
+	margin: auto;
+	color: var(--fg);
+	background: var(--bg);
+	padding: 1em;
+	border: dashed 1px var(--bordercolor);
+	border-radius: 5px;
+}
+footer {
+	text-align: center;
+}
+a {
+	color: slateblue;
+}
+pre {
+	background: #1f252d;
+	border: 1px solid var(--limish);
+	border-radius: 5px;
+	padding: 1em;
+	margin: 1em;
+	white-space: pre-wrap;
+}
+code {
+	background-color: #1f252d;
+	color: var(--limish);
+	overflow-wrap: break-word;
+}
+
+@media (min-width: 55em) {
+	main {
+		max-width: var(--genwidth) ;
+	}
+}
+/* store stuff */
+ul.images {
+	display: flex;
+	flex-direction: row;
+	margin: 0;
+	padding: 0;
+	width: 25em;
+	overflow-x: auto;
+
+	list-style-type: none;
+	transition: -webkit-transform 0.25s ease;
+	transition: transform 0.25s ease;
+}
+ul.images:hover {
+	-webkit-transform: scale(2);
+	transform: scale(2);
+}
+ul.images li img {
+	flex: 0 0 auto;
+	width: auto;
+	height: 200px;
+	padding: 2.5px;
+}
