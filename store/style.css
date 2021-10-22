@@ -17,6 +17,7 @@
 body {
 	font-family: mechanical;
 	background: linear-gradient(#000040, #000000) fixed ;
+
 	margin-bottom: 100px;
 }
 main {
@@ -31,7 +32,13 @@ footer {
 	text-align: center;
 }
 a {
-	color: slateblue;
+	color: #36f433;
+	text-decoration: none;
+}
+dt img {
+	max-height: 1em;
+	max-width: 1em;
+	vertical-align: middle;
 }
 pre {
 	background: #1f252d;
