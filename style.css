@@ -30,8 +30,36 @@ main {
 	border: dashed 1px var(--bordercolor);
 	border-radius: 5px;
 }
+nav,footer {
+	text-align: center ;
+	font-variant: small-caps ;
+	clear: both ;
+	background: var(--altbg) ;
+	border-radius: 5px ;
+	margin: auto ;
+	border: dashed 1px var(--bordercolor) ;
+	max-width: var(--genwidth) ;
+}
 footer {
-	text-align: center;
+	color: var(--altfg) ;
+	margin-top: 1em ;
+}
+
+nav {
+	max-width: var(--genwidth) ;
+}
+nav li,footer li {
+	display: inline-block ;
+	list-style: none ;
+	background: var(--bg) ;
+	border-radius: 10px ;
+	padding: .5em ;
+	max-width: 7em ;
+}
+
+nav ul, footer ul, #taglist {
+	padding: 0;
+	margin: .5em;
 }
 a {
 	color: #36f433;
@@ -42,6 +70,12 @@ dt img {
 	max-width: 1em;
 	vertical-align: middle;
 }
+nav a:hover li, footer a:hover li,#tagcloud a:hover li {
+	background: steelblue ;
+	color: black ;
+	box-shadow: 2px 2px cyan ;
+}
+
 pre {
 	background: #1f252d;
 	border: 1px solid var(--limish);
@@ -75,6 +109,32 @@ tr, td {
 }
 td {
 	float: none;
+}
+
+/* This should be genwidth + (navwidth*2) + padding */
+@media (min-width: 1200px) {
+	nav {
+		float: left ;
+		width: 175px ;
+		position: fixed ;
+		text-align: left ;
+		font-size: large ;
+	}
+	nav::before {
+		content: "Links" ;
+		text-align: center ;
+		display: block ;
+		font-size: large ;
+		color: violet ;
+		text-decoration: underline ;
+		margin-top: .5em ;
+	}
+	nav li {
+		display: block ;
+		text-align: center ;
+		margin: .5em auto ;
+	}
+
 }
 
 /* store stuff */
