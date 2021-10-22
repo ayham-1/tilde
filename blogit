@@ -29,11 +29,11 @@ init:
 	printf '<!DOCTYPE html><html><head><title>$$TITLE</title></head><body>' > templates/header.html
 	printf '</body></html>' > templates/footer.html
 	printf '' > templates/index_header.html
-	printf '<h2>Articles</h2><ul>' > templates/article_list_header.html
 	printf '<p>Tags:' > templates/tag_list_header.html
 	printf '<a href="$$URL">$$NAME</a>' > templates/tag_entry.html
 	printf ', ' > templates/tag_separator.html
 	printf '</p>' > templates/tag_list_footer.html
+	printf '<h2>Articles</h2><ul>' > templates/article_list_header.html
 	printf '<li><a href="$$URL">$$DATE $$TITLE</a></li>' > templates/article_entry.html
 	printf '' > templates/article_separator.html
 	printf '</ul>' > templates/article_list_footer.html
@@ -67,6 +67,7 @@ blog/index.html: $(ARTICLES) $(TAGFILES) $(addprefix templates/,$(addsuffix .htm
 	export TITLE; \
 	envsubst < templates/header.html > $@; \
 	envsubst < templates/index_header.html >> $@; \
+	envsubst < templates/article_list_header.html >> $@; \
 	envsubst < templates/tag_list_header.html >> $@; \
 	first=true; \
 	for t in $(shell cat $(TAGFILES) | sort -u); do \
@@ -77,7 +78,6 @@ blog/index.html: $(ARTICLES) $(TAGFILES) $(addprefix templates/,$(addsuffix .htm
 		first=false; \
 	done >> $@; \
 	envsubst < templates/tag_list_footer.html >> $@; \
-	envsubst < templates/article_list_header.html >> $@; \
 	first=true; \
 	for f in $(ARTICLES); do \
 		printf '%s ' "$$f"; \
