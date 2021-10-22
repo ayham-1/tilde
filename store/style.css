@@ -115,6 +115,7 @@ td {
 @media (min-width: 1200px) {
 	nav {
 		float: left ;
+		vertical-align: middle ;
 		width: 175px ;
 		position: fixed ;
 		text-align: left ;
