@@ -71,6 +71,12 @@ dt img {
 	max-width: 1em;
 	vertical-align: middle;
 }
+li img {
+	max-height: 1em;
+	max-width: 1em;
+	vertical-align: middle;
+}
+
 nav a:hover li, footer a:hover li,#tagcloud a:hover li {
 	background: steelblue ;
 	color: black ;
