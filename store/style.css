@@ -17,8 +17,10 @@
 body {
 	font-family: mechanical;
 	background: linear-gradient(#000040, #000000) fixed ;
-
 	margin-bottom: 100px;
+}
+body h1 {
+	color: var(--fg);
 }
 main {
 	margin: auto;
