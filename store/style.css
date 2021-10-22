@@ -47,7 +47,6 @@ footer {
 
 nav,header {
 	max-width: var(--genwidth) ;
-	vertical-align: middle;
 }
 nav li,footer li {
 	display: inline-block ;
