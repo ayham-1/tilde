@@ -18,6 +18,17 @@
 							$("#partial_header").load("partials/header.htm");
 							$("#partial_footer").load("partials/footer.htm"); }); 
 		</script>
+
+		<script type="text/javascript">
+			window.onload = function() {
+							document.getElementById("webpin_send_this_page").onclick = function() {
+							navigator.clipboard.writeText("https://ayham.xyz");
+
+							document.getElementById("webpins").innerHTML
+												+= "<br/><p><small>Copied to clipboard!<br/>Share to your heart's content!</small></p>";
+											};
+						};
+		</script>
 	</head>
 	<body>
 		<center>
@@ -63,11 +74,12 @@
 				</dt>
 				<dd>My gpg keys and contact info</dd>
 				<br/>
-				<center>
+				<center id="webpins">
 					<img src="pix/webpins/penguin.gif" alt="webpin_penguin">
-					<img src="pix/webpins/send_this_page.gif"
-						 alt="webpin_send_this_page">
-					<img src="pix/webpins/vi_now.gif" alt="webpin_vi_now">
+					<img id="webpin_send_this_page" src="pix/webpins/send_this_page.gif"
+							   alt="webpin_send_this_page">
+					<a href="https://ayham.xyz/setup.htm"><img src="pix/webpins/vi_now.gif"
+						alt="webpin_vi_now"></a>
 				</center>
 			</dl>
 		</main>
