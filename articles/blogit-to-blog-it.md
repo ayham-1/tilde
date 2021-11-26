@@ -134,6 +134,7 @@ ensure that you have the program command "markdown" which converts markdown to
 HTML. After that, substitute as following:
 
 ```
+...
 blog/%.html: $(BLOG_SRC)/%.md $(addprefix templates/,$(addsuffix .html,header article_header article_footer footer))
 	mkdir -p blog
 	TITLE="$(shell head -n1 $<)"; \
@@ -173,6 +174,7 @@ blog/%.html: $(BLOG_SRC)/%.md $(addprefix templates/,$(addsuffix .html,header ar
 -		-e ':T;p;:t;s,<\([^/>][^>]*\)>\(\(<[^/>][^>]*>\)*\),\2</\1>,;/<[^\/>]/bt;x;/^$$/{$${x;p};d};bL' \
 -		"$<" | envsubst >> $@; \
 +		sed -e 1d -e '/^;/d' < $< | markdown -f fencedcode >> $@; \
+...
 ```
 
 # Conclusion
