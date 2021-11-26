@@ -68,6 +68,9 @@ a {
 a:hover {
 	font-style: italic;
 }
+#partial_header a:hover {
+	font-style: normal;
+}
 #partial_header a li:hover {
 	font-style: italic;
 }
