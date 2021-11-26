@@ -65,6 +65,9 @@ a {
 	color: #36f433;
 	text-decoration: none;
 }
+a:hover {
+	font-style: italic;
+}
 dt img {
 	max-height: 1em;
 	max-width: 1em;
