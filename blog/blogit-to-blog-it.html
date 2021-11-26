@@ -150,7 +150,8 @@ would add an extra newline at the start of each code piece. To solve this issue,
 ensure that you have the program command &ldquo;markdown&rdquo; which converts markdown to
 HTML. After that, substitute as following:</p>
 
-<pre><code>blog/%.html: $(BLOG_SRC)/%.md $(addprefix templates/,$(addsuffix .html,header article_header article_footer footer))
+<pre><code>...
+blog/%.html: $(BLOG_SRC)/%.md $(addprefix templates/,$(addsuffix .html,header article_header article_footer footer))
     mkdir -p blog
     TITLE="$(shell head -n1 $&lt;)"; \
     export TITLE; \
@@ -189,6 +190,7 @@ HTML. After that, substitute as following:</p>
 -       -e ':T;p;:t;s,&lt;\([^/&gt;][^&gt;]*\)&gt;\(\(&lt;[^/&gt;][^&gt;]*&gt;\)*\),\2&lt;/\1&gt;,;/&lt;[^\/&gt;]/bt;x;/^$$/{$${x;p};d};bL' \
 -       "$&lt;" | envsubst &gt;&gt; $@; \
 +       sed -e 1d -e '/^;/d' &lt; $&lt; | markdown -f fencedcode &gt;&gt; $@; \
+...
 </code></pre>
 
 <h1>Conclusion</h1>
