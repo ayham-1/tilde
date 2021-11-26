@@ -2,12 +2,23 @@
 <rss version="2.0">
 <channel>
 <title>ayham's blog</title>
-<link>https://tilde.team/~ayham/blog</link>
+<link>articles.ayham.xyz</link>
 <description>probably interesting stuff</description>
 <item>
+<title>blogit: A Complete Guide</title>
+<link>articles.ayham.xyz/blogit-to-blog-it.html</link>
+<guid>articles.ayham.xyz/blogit-to-blog-it.html</guid>
+<pubDate>Fri, 26 Nov 2021 10:18:28 +0300</pubDate>
+<description>Running a personal website should be an easy task. Unfortunately, a big
+hindrance is that there aren't many "suckless" blogging system. 
+[blogit](https://pedantic.software/git/blogit) is the closest in terms of 
+simplicity and minimalism to perfection. This article would be an end-all be-all
+guide to effectively install blogit into your own website.</description>
+</item>
+<item>
 <title>The Beginning of a series!</title>
-<link>https://tilde.team/~ayham/blog/first-article.html</link>
-<guid>https://tilde.team/~ayham/blog/first-article.html</guid>
+<link>articles.ayham.xyz/first-article.html</link>
+<guid>articles.ayham.xyz/first-article.html</guid>
 <pubDate>Fri, 01 Oct 2021 19:23:41 +0300</pubDate>
 <description>This would be the beginning of my all-new article series. I would be writing 
 about software I make and use, with the occasional school essay turned article.</description>

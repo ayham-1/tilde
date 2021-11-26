@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+		<head>
+				<title>blogit: A Complete Guide</title>
+				<link rel="stylesheet" href="../style.css">
+				<link rel="shortcut icon" type="image/jpg"
+				href="https://ayham.xyz/pix/pfp.ico"/>
+				<meta name="viewport" content="width=device-width, initial-scale=1">
+				<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+				<script type="text/javascript">
+					$(document).ready(function() { 
+											$("#partial_header").load("../partials/header.htm");
+											$("#partial_footer").load("../partials/footer.htm"); }); 
+				</script>
+
+		</head>
+		<body>
+<center>
+<h1 style=font-size:xxx-large>blogit: A Complete Guide</h1>
+</center>
+<div id=partial_header></div>
+<main>
+<p>Running a personal website should be an easy task. Unfortunately, a big
+hindrance is that there aren&rsquo;t many &ldquo;suckless&rdquo; blogging system.
+<a href="https://pedantic.software/git/blogit">blogit</a> is the closest in terms of
+simplicity and minimalism to perfection. This article would be an end-all be-all
+guide to effectively install blogit into your own website.</p>
+
+<h1>Installation</h1>
+
+<p>blogit advertises itself as a small static blog generator, and indeed the whole
+project is comprised of a single script file. To install this file, first
+navigate to your website&rsquo;s git directory then <code>wget</code> said script:</p>
+
+<pre><code>$ cd proj/website/
+$ wget https://pedantic.software/git/blogit/raw/27d3f06259e83df2fed6fec7bbe77ac6b917eee7/blogit
+$ chmod +x blogit
+</code></pre>
+
+<p>This might seem weird having a script in the home directory of your website, but
+I couldn&rsquo;t find a better place to put it, especially when editing the actual
+script is dependent on each website&rsquo;s setup (as seen later on).</p>
+
+<p>blogit initializes the basic operational structure with the following command:</p>
+
+<pre><code>$ ./blogit init
+</code></pre>
+
+<p>It is useful to let blogit build automatically on every git commit, so let&rsquo;s
+configure that:</p>
+
+<pre><code>$ touch .git/hooks/pre-commit
+$ chmod +x .git/hooks/pre-commit
+$ echo "$!/bin/sh" &gt; .git/hooks/pre-commit
+$ echo "./blogit build" &gt; .git/hooks/pre-commit
+</code></pre>
+
+<p>Then, open the <code>blogit</code> script with a text editor, search for <code>exclude</code>
+and delete the line where it outputs <code>blog</code> to git exclude. This
+functionality is meant for systems where the website&rsquo;s root is not the same as
+blogit&rsquo;s root.</p>
+
+<h1>Configuration</h1>
+
+<p>blogit uses the file <code>config</code> in <code>$(website)</code> for its settings, so let&rsquo;s create it:</p>
+
+<pre><code>$ touch config
+</code></pre>
+
+<p>To get the list of settings available, run:</p>
+
+<pre><code>$ head -n 18 blogit
+</code></pre>
+
+<p>For my use case, this is what I set it up as:</p>
+
+<pre><code>BLOG_DATE_FORMAT:=%Y/%m/%d %H:%M
+BLOG_DATE_FORMAT_INDEX:=%Y/%m/%d
+BLOG_TITLE:=ayham's blog
+BLOG_DESCRIPTION:=probably interesting stuff
+BLOG_URL_ROOT:=articles.ayham.xyz
+BLOG_FEED_MAX:=20
+BLOG_FEEDS:=rss atom
+BLOG_SRC:=articles
+</code></pre>
+
+<p>Everything should be self explainatory, except perhaps for <code>BLOG_FEED*</code>.
+<code>BLOG_FEED_MAX</code> specifies the amount of rss and atom entries to generate,
+whereas <code>BLOG_FEEDS</code> specify feed formats to generate.</p>
+
+<p>The script can be molded for each case, examples of doing this is explained
+later on.</p>
+
+<h1>Building, and the Tag System</h1>
+
+<p>Setting tags for each article is super easy in blogit. For every article,
+append this as a comment in the end of the file:</p>
+
+<pre><code>[semicolon] Tags: TAG1 TAG2
+</code></pre>
+
+<p>Finally, to build your blog:</p>
+
+<p><code>$ ./blogit build</code></p>
+
+<p>Now you should be able to navigate to <code>$(website)/blog/index.html</code>.
+Congratz!</p>
+
+<h1>Miscellaneous</h1>
+
+<p>Because blogit is a very small script, we can easily edit it to make add
+features or to add complex styling functionality.</p>
+
+<p>As done earlier, removing the git exclude is a basic recommended edit.</p>
+
+<p>A more visible example is the order of HTML aggregation. For example, this
+website has its <code>article_list_header.html</code> coming before the tag list. The
+article list header file includes the big &ldquo;Articles&rdquo; seen on the <a href="https://blog.ayham.xyz">index
+page</a>, which comes before the tag list. To do this you can edit
+the <code>blog/index.html:</code> section in the blogit script.</p>
+
+<pre><code>...
+blog/index.html: $(ARTICLES) $(TAGFILES) $(addprefix templates/,$(addsuffix .html,header index_header tag_list_header tag_entry tag_separator tag_list_footer article_list_header article_entry article_separator article_list_footer index_footer footer))
+    mkdir -p blog
+    TITLE="$(BLOG_TITLE)"; \
+    export TITLE; \
+    envsubst &lt; templates/header.html &gt; $@; \
+    envsubst &lt; templates/index_header.html &gt;&gt; $@; \
++   envsubst &lt; templates/article_list_header.html &gt;&gt; $@; \
+    envsubst &lt; templates/tag_list_header.html &gt;&gt; $@; \
+    first=true; \
+    for t in $(shell cat $(TAGFILES) | sort -u); do \
+        "$$first" || envsubst &lt; templates/tag_separator.html; \
+        NAME="$$t" \
+        URL="@$$t.html" \
+        envsubst &lt; templates/tag_entry.html; \
+        first=false; \
+    done &gt;&gt; $@; \
+    envsubst &lt; templates/tag_list_footer.html &gt;&gt; $@; \
+-   envsubst &lt; templates/article_list_header.html &gt;&gt; $@; \
+    first=true; \
+    for f in $(ARTICLES); do \
+...
+</code></pre>
+
+<h2>Fixing Code Blocks</h2>
+
+<p>I have noticed that when using backticks (`) to annotate a code block, blogit
+would add an extra newline at the start of each code piece. To solve this issue,
+ensure that you have the program command &ldquo;markdown&rdquo; which converts markdown to
+HTML. After that, substitute as following:</p>
+
+<pre><code>blog/%.html: $(BLOG_SRC)/%.md $(addprefix templates/,$(addsuffix .html,header article_header article_footer footer))
+    mkdir -p blog
+    TITLE="$(shell head -n1 $&lt;)"; \
+    export TITLE; \
+    AUTHOR="$(shell git log -n 1 --reverse --format="%cn" -- "$&lt;")"; \
+    export AUTHOR; \
+    DATE_POSTED="$(shell git log --diff-filter=A --date="format:$(BLOG_DATE_FORMAT)" --pretty=format:'%ad' -- "$&lt;")"; \
+    export DATE_POSTED; \
+    DATE_EDITED="$(shell git log -n 1 --date="format:$(BLOG_DATE_FORMAT)" --pretty=format:'%ad' -- "$&lt;")"; \
+    export DATE_EDITED; \
+    TAGS="$(shell grep -i '^; *tags:' "$&lt;" | cut -d: -f2- | paste -sd ',')"; \
+    export TAGS; \
+    envsubst &lt; templates/header.html &gt; $@; \
+    envsubst &lt; templates/article_header.html &gt;&gt; $@; \
+-       sed -e 1d \
+-       -e '/^;/d' \
+-       -e 's/&amp;/\&amp;amp;/g' \
+-       -e 's/&lt;/\&amp;lt;/g' \
+-       -e 's/&gt;/\&amp;gt;/g' \
+-       -e '/^```$$/{s,.*,,;x;p;/^&lt;\/code&gt;/d;s,.*,&lt;pre&gt;&lt;code&gt;,;bT}' \
+-       -e 'x;/&lt;\/code&gt;/{x;s,\$$,\&amp;#36;,g;$$G;p;d};x' \
+-       -e 's,\\\$$,\&amp;#36;,g' \
+-       -e '/^####/{s,^####,&lt;h4&gt;,;s,$$,&lt;/h4&gt;,;H;s,.*,,;x;p;d}' \
+-       -e '/^###/{s,^###,&lt;h3&gt;,;s,$$,&lt;/h3&gt;,;H;s,.*,,;x;p;d}' \
+-       -e '/^##/{s,^##,&lt;h2&gt;,;s,$$,&lt;/h2&gt;,;H;s,.*,,;x;p;d}' \
+-       -e '/^#/{s,^#,&lt;h1&gt;,;s,$$,&lt;/h1&gt;,;H;s,.*,,;x;p;d}' \
+-       -e 's,`\([^`]*\)`,&lt;code&gt;\1&lt;/code&gt;,g' \
+-       -e 's,\*\*\(\([^*&lt;&gt;][^*&lt;&gt;]*\*\?\)*\)\*\*,&lt;b&gt;\1&lt;/b&gt;,g' \
+-       -e 's,\*\([^*&lt;&gt;][^*&lt;&gt;]*\)\*,&lt;i&gt;\1&lt;/i&gt;,g' \
+-       -e 's,!\[\([^]]*\)\](\([^)]*\)),&lt;img src="\2" alt="\1"/&gt;,g' \
+-       -e 's,\[\([^]]*\)\](\([^)]*\)),&lt;a href="\2"&gt;\1&lt;/a&gt;,g' \
+-       -e '/^- /{s,^- ,&lt;li&gt;,;s,$$,&lt;/li&gt;,;x;/^&lt;\/ul&gt;/{x;bL};p;s,.*,&lt;ul&gt;,;bT}' \
+-       -e '/^[1-9][0-9]*\. /{s,^[0-9]*\. ,&lt;li&gt;,;s,$$,&lt;/li&gt;,;x;/^&lt;\/ol&gt;/{x;bL};p;s,.*,&lt;ol&gt;,;bT}' \
+-       -e '/^$$/{x;/^$$/d;p;d}' \
+-       -e 'x;/^$$/{s,.*,&lt;p&gt;,;bT};x' \
+-       -e ':L;$$G;p;d' \
+-       -e ':T;p;:t;s,&lt;\([^/&gt;][^&gt;]*\)&gt;\(\(&lt;[^/&gt;][^&gt;]*&gt;\)*\),\2&lt;/\1&gt;,;/&lt;[^\/&gt;]/bt;x;/^$$/{$${x;p};d};bL' \
+-       "$&lt;" | envsubst &gt;&gt; $@; \
++       sed -e 1d -e '/^;/d' &lt; $&lt; | markdown -f fencedcode &gt;&gt; $@; \
+</code></pre>
+
+<h1>Conclusion</h1>
+
+<p><a href="https://landchad.net">Go get a website</a>, and set up blogit.
+Want to contact me? <a href="https://ayham.xyz/contact.htm">Here.</a></p>
+</main>
+<div align=center id=partial_footer></div>
+
+</body>
+</html>
