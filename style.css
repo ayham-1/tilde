@@ -68,6 +68,9 @@ a {
 a:hover {
 	font-style: italic;
 }
+#partial_header a li:hover {
+	font-style: italic;
+}
 dt img {
 	max-height: 1em;
 	max-width: 1em;
