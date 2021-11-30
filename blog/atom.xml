@@ -2,16 +2,26 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
 <title type="text">ayham's blog</title>
 <subtitle type="text">probably interesting stuff</subtitle>
-<updated>2021-11-30T08:44:35Z</updated>
+<updated>2021-11-30T20:02:51Z</updated>
 <link rel="alternate" type="text/html" href="articles.ayham.xyz"/>
 <id>articles.ayham.xyz/atom.xml</id>
 <link rel="self" type="application/atom+xml" href="articles.ayham.xyz/atom.xml"/>
+<entry>
+<title type="text">Hardening the Moto One Macro</title>
+<link rel="alternate" type="text/html" href="articles.ayham.xyz/hardening-the-one-macro.html"/>
+<id>articles.ayham.xyz/hardening-the-one-macro.html</id>
+<published>2021-11-30T19:36:20Z</published>
+<updated>2021-11-30T19:36:20Z</updated>
+<author><name>ayham</name></author>
+<summary type="text">The Motorola One Macro is a mid-range phone, with decent "openness" which allows
+basic hardening modification. The phone has the follow specifications:</summary>
+</entry>
 <entry>
 <title type="text">blogit: A Complete Guide</title>
 <link rel="alternate" type="text/html" href="articles.ayham.xyz/blogit-to-blog-it.html"/>
 <id>articles.ayham.xyz/blogit-to-blog-it.html</id>
 <published>2021-11-26T10:18:28Z</published>
-<updated>2021-11-26T13:14:11Z</updated>
+<updated>2021-11-30T08:44:30Z</updated>
 <author><name>ayham</name></author>
 <summary type="text">Running a personal website should be an easy task. Unfortunately, a big
 hindrance is that there aren't many "suckless" blogging system. 
