@@ -4,7 +4,7 @@ Running a personal website should be an easy task. Unfortunately, a big
 hindrance is that there aren't many "suckless" blogging system. 
 [blogit](https://pedantic.software/git/blogit) is the closest in terms of 
 simplicity and minimalism to perfection. This article would be an end-all be-all
-guide to effectively install blogit into your own website.
+guide to effectively install blogit onto your own website.
 
 # Installation
 blogit advertises itself as a small static blog generator, and indeed the whole
