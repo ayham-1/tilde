@@ -179,6 +179,6 @@ blog/%.html: $(BLOG_SRC)/%.md $(addprefix templates/,$(addsuffix .html,header ar
 
 # Conclusion
 [Go get a website](https://landchad.net), and set up blogit.
-Want to contact me? [Here.](https://ayham.xyz/contact.htm)
+Want to contact me? [Here.](https://contact.ayham.xyz)
 
 ;Tags: GUIDE WEBSITE

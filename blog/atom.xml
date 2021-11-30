@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
 <title type="text">ayham's blog</title>
 <subtitle type="text">probably interesting stuff</subtitle>
-<updated>2021-11-30T20:03:48Z</updated>
+<updated>2021-11-30T20:17:25Z</updated>
 <link rel="alternate" type="text/html" href="articles.ayham.xyz"/>
 <id>articles.ayham.xyz/atom.xml</id>
 <link rel="self" type="application/atom+xml" href="articles.ayham.xyz/atom.xml"/>
@@ -11,7 +11,7 @@
 <link rel="alternate" type="text/html" href="articles.ayham.xyz/hardening-the-one-macro.html"/>
 <id>articles.ayham.xyz/hardening-the-one-macro.html</id>
 <published>2021-11-30T19:36:20Z</published>
-<updated>2021-11-30T19:36:20Z</updated>
+<updated>2021-11-30T20:16:24Z</updated>
 <author><name>ayham</name></author>
 <summary type="text">The Motorola One Macro is a mid-range phone, with decent "openness" which allows
 basic hardening modification. The phone has the follow specifications:</summary>
