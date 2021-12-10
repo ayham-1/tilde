@@ -1,12 +1,15 @@
 var cacheName = 'ayham.xyz';
 var filesToCache = [
 	'/',
+	'/font.woff',
+	'/store/font.woff',
+	'/blog/font.woff',
 	'/index.htm',
 	'/styles.css',
 	'/blog/index.html',
-	'/blog/',
+	'/blog/*',
 	'/store/index.html',
-	'/store/',
+	'/store/*',
 	'/pix/pfp/'
 	'/books.htm',
 	'/proj.htm',
