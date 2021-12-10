@@ -1,15 +1,16 @@
+importScript("https://unpkg.com/workbox-sw@2.1.0/build/importScripts/workbox-sw.prod.v2.1.0.js")
+
 var cacheName = 'ayham.xyz';
 var filesToCache = [
 	'/',
 	'/font.woff',
 	'/store/font.woff',
 	'/blog/font.woff',
+
 	'/index.htm',
 	'/styles.css',
 	'/blog/index.html',
-	'/blog/',
 	'/store/index.html',
-	'/store/',
 	'/pix/pfp/',
 	'/books.htm',
 	'/proj.htm',
@@ -18,12 +19,11 @@ var filesToCache = [
 ];
 
 /* Start the service worker and cache all of the app's content */
-self.addEventListener('install', function(e) {
-  e.waitUntil(
-    caches.open(cacheName).then(function(cache) {
-      return cache.addAll(filesToCache);
-    })
-  );
+self.addEventListener('install', (e) => {
+  e.waitUntil((async () => {
+    const cache = await caches.open(cacheName);
+    await cache.addAll(contentToCache);
+  })());
 });
 
 /* Serve cached content when offline */
@@ -38,4 +38,14 @@ self.addEventListener('fetch', function(event) {
       });
     })
   );
+});
+
+/* Clearing the Cache */
+self.addEventListener('activate', (e) => {
+  e.waitUntil(caches.keys().then((keyList) => {
+    return Promise.all(keyList.map((key) => {
+      if (key === cacheName) { return; }
+      return caches.delete(key);
+    }))
+  }));
 });
