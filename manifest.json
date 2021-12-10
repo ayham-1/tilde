@@ -13,6 +13,7 @@
     }, {
     "src": "pix/pfp/196x196_masked.webp",
       "sizes": "196x196",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     }]
 }
