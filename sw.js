@@ -10,9 +10,10 @@ var filesToCache = [
 	'/blog/',
 	'/store/index.html',
 	'/store/',
-	'/pix/pfp/'
+	'/pix/pfp/',
 	'/books.htm',
 	'/proj.htm',
+	'/setup.htm'
 	'/contact.htm'
 ];
 
