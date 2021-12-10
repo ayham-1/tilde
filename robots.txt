@@ -1,0 +1,2 @@
+Sitemap: https://ayham.xyz/sitemap.txt
+Sitemap: https://ayham.xyz/blog/rss.xml
