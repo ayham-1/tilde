@@ -2,7 +2,7 @@
 function loadScript(scriptUrl) {
 	const script = document.createElement('script');
 	script.src = scriptUrl;
-	document.body.appendChild(script);
+	document.head.appendChild(script);
 
 	return new Promise((res, rej) => {
 		script.onload = function() {
