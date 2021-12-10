@@ -13,7 +13,7 @@ var filesToCache = [
 	'/pix/pfp/',
 	'/books.htm',
 	'/proj.htm',
-	'/setup.htm'
+	'/setup.htm',
 	'/contact.htm'
 ];
 
