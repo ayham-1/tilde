@@ -12,7 +12,7 @@
 	--bg: rgba(0,0,0,0.4) ;
 	--altbg: rgba(0,0,0,0.4) ;
 }
-@font-face { font-family: mechanical; src: url('font.woff'); }
+@font-face { font-family: mechanical; src: url('font.woff'); font-display: swap; }
 
 body {
 	font-family: mechanical;
