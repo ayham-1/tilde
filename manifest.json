@@ -10,5 +10,9 @@
     "src": "pix/pfp/512x512.webp",
       "sizes": "512x512",
       "type": "image/png"
+    }, {
+    "src": "pix/pfp/196x196_masked.webp",
+      "sizes": "196x196",
+      "type": "image/png"
     }]
 }
