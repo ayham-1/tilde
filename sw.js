@@ -1,5 +1,3 @@
-importScript("https://unpkg.com/workbox-sw@2.1.0/build/importScripts/workbox-sw.prod.v2.1.0.js")
-
 var cacheName = 'ayham.xyz';
 var filesToCache = [
 	'/',
