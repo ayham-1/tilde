@@ -95,7 +95,7 @@ $ fastboot erase userdata
 
 # Flashing LineageOS
 LineageOS being a customizable custom android ROM, is wanted by many.
-Unfortunately, one can only support as much Android devices until it is no 
+Unfortunately, one can only support as many Android devices until it is no 
 longer feasable. GSIs try to deliver a user experience that attempts to solve 
 this. LineageOS GSI ROMs tend to be very buggy, mainly because of issues with
 vendor bootloaders. LineageOS GSI is flashable to the One Macro, and does indeed
@@ -163,7 +163,7 @@ $ fastboot erase userdata
 
 *Note: This formats ALL user-data and voids any warranty*
 
-Secondly, you can try flashing Magisk's batched bootloader. If you would like
+Secondly, you can try flashing Magisk's patched bootloader. If you would like
 an un-rooted system, do not install Magisk's Manager.
 
 Thirdly, as a last resort, try relocking and unlocking the bootloader.

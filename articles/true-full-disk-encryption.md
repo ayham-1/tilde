@@ -33,8 +33,8 @@ sda                8:0    0 931.5G  0 disk
 
 ```
 
-This would be the final result. LVM over LUKS2 for the main (/dev/sda3)
-partition, LUKS1 for /dev/sda2, and the UEFI disk on /dev/sda1
+This would be the final result. LVM over LUKS2 for the main (```/dev/sda3```)
+partition, LUKS1 for ```/dev/sda2```, and the UEFI disk on ```/dev/sda1```.
 
 I am not responsible for any loss of data that occurs because you irresponsibly
 ran any command.
@@ -42,14 +42,14 @@ ran any command.
 Flash your ISO into your USB, turn off your device, plug the USB in, boot into
 the USB, and follow this guide from another device.
 
-# Partitioning The Disk
+# Partitioning the Disk
 Following this would irreversibly erase your whole disk. First, start by
 identifying the disk name. Run ```lsblk```, find your disk name by its known
-space. I talk from hereafter with ```/dev/sda``` as the installation hard disk.
-Using your [favourite disk editing tools](https://wiki.archlinux.org/title/Partitioning#Tools)
-, do the following task:
+space. I from hereafter use ```/dev/sda``` as the installation hard-disk.
+Using your [favourite disk editing tools](https://wiki.archlinux.org/title/Partitioning#Tools),
+do the following tasks:
 
-* Label partition as GPT
+* Label disk as GPT
 * Create a 512MB, EFI tagged. FAT32 formatted. (```/dev/sda1```)
 * Create the boot disk with 2GB. We will format it later on. (```/dev/sda2```)
 * Create the main disk with as much space that is available, leave some at the
@@ -86,9 +86,8 @@ $ mkfs.ext4 /dev/vol/data
 Your disk should be ready for installation!
 
 # Artix Installation
-This section won't hold your hand while installing a full Artix system. I will
-just go over configuring the disk in relation to the system. ```mount``` your
-horses and go ```chroot```ing!
+This section won't hold your hand installing a full Artix system. I will just
+go over configuring the disk. ```mount``` your horses and go ```chroot```ing!
 
 ```
 $ mount /dev/vol/root /mnt/
@@ -105,9 +104,9 @@ $ artix-chroot /mnt/
 $ # Continue installing the system, skipping GRUB for the next section
 ```
 
-# GRUB Bootloader Installation & Configuration
-This section assumes that you are already ```chroot```ed
-Install ```GRUB```:
+## GRUB Bootloader Installation & Configuration
+This section assumes that you are already ```chroot```ed. Install ```GRUB```:
+
 ```
 $ pacman -S grub efibootmgr
 ```
@@ -120,8 +119,7 @@ $ vi /etc/default/grub
 GRUB_CMDLINE_LINUX="... cryptdevice=UUID=[YOUR LUKS PARTITION UUID]"
 GRUB_PRELOAD_MODULES="part_gpt part_msdos lvm"
 GRUB_ENABLE_CRYPTODISK=y
-$ grub-install --target=x86_64-efi --efi-directory=/boot/efi \
-	--bootloader-id=grub
+$ grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=grub
 ```
 
 ```
@@ -137,12 +135,11 @@ $ grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
 Make sure you run ```mkinitcpio```, do so by updating your kernel pacman will
-update your initcpio automatically, or running this:
+update your initcpio automatically, or run this:
 
 ```
 $ mkinitcpio -P
 ```
-
 
 Congratz, you should have a *true* full disk encryption system!
 
@@ -150,4 +147,4 @@ Congratz, you should have a *true* full disk encryption system!
 Full disk encryption should not be hard to setup, try it out in a VM before
 converting all of your machines!
 
-:Tags: GUIDE LINUX SECURITY
+;Tags: GUIDE LINUX SECURITY

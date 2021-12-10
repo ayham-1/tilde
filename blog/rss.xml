@@ -5,6 +5,15 @@
 <link>articles.ayham.xyz</link>
 <description>probably interesting stuff</description>
 <item>
+<title>True Full Disk Encryption On Linux</title>
+<link>articles.ayham.xyz/true-full-disk-encryption.html</link>
+<guid>articles.ayham.xyz/true-full-disk-encryption.html</guid>
+<pubDate>Fri, 10 Dec 2021 09:16:16 +0300</pubDate>
+<description>My friends laugh at me when they are told that I have to put in 4 passwords 
+with ~18 characters each to login into my computer. I laugh back at them,
+wishing them enjoyment with Ads in the start-menu.</description>
+</item>
+<item>
 <title>Hardening the Moto One Macro</title>
 <link>articles.ayham.xyz/hardening-the-one-macro.html</link>
 <guid>articles.ayham.xyz/hardening-the-one-macro.html</guid>
