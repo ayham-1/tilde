@@ -7,7 +7,10 @@ basic hardening modification. The phone has the follow specifications:
 * 720 x 1520 px, 19:9 ratios (~270 ppi)
 * Comes with Anroid 9.0, officially upgradable to Android 10.0
 * Mali-G72 MP3 GPU
-* eMMC 5.1 storage with 64GB * microSDXC uses shared SIM slot, 32GB tested * Main camera 13 MP, depth camera 2MP, 2MP for macro camera * WIFI 802.11 b/g/n, with hotspot
+* eMMC 5.1 storage with 64GB 
+* microSDXC uses shared SIM slot, 32GB tested
+* Main camera 13 MP, depth camera 2MP, 2MP for macro camera
+* WIFI 802.11 b/g/n, with hotspot
 * No NFC support
 
 This guide goes over unlocking the bootloader, flashing a GSI, flashing
