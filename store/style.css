@@ -109,6 +109,7 @@ code {
 	margin: auto;
 	max-width: 90%;
 	max-height: 300px;
+	display: none;
 }
 .bar {
 	color: greenyellow;
