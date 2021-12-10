@@ -4,6 +4,11 @@
   "lang": "en-US",
   "start_url": "/index.htm",
   "display": "standalone",
-  "background_color": "white",
-  "theme_color": "white"
+  "background_color": "dark-blue",
+  "theme_color": "dark-blue",
+  "icons": [{
+    "src": "pix/pfp_512x512.webp",
+      "sizes": "512x512",
+      "type": "image/png"
+    }],
 }
