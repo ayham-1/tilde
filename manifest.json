@@ -4,10 +4,10 @@
   "lang": "en-US",
   "start_url": "/index.htm",
   "display": "standalone",
-  "background_color": "blue",
-  "theme_color": "blue",
+  "background_color": "black",
+  "theme_color": "black",
   "icons": [{
-    "src": "pix/pfp_512x512.webp",
+    "src": "pix/pfp/512x512.webp",
       "sizes": "512x512",
       "type": "image/png"
     }]
