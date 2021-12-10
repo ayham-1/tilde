@@ -7,6 +7,7 @@ var filesToCache = [
 	'/blog/',
 	'/store/index.html',
 	'/store/',
+	'/pix/pfp/'
 ];
 
 /* Start the service worker and cache all of the app's content */
