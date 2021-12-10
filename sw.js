@@ -8,6 +8,9 @@ var filesToCache = [
 	'/store/index.html',
 	'/store/',
 	'/pix/pfp/'
+	'/books.htm',
+	'/proj.htm',
+	'/contact.htm'
 ];
 
 /* Start the service worker and cache all of the app's content */
