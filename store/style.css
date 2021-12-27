@@ -12,10 +12,10 @@
 	--bg: rgba(0,0,0,0.4) ;
 	--altbg: rgba(0,0,0,0.4) ;
 }
-@font-face { font-family: code; src: url('font.woff'); font-display: swap; }
+@font-face { font-family: courier; src: url('font.woff'); font-display: swap; }
 
 body {
-	font-family: code;
+	font-family: courier;
 	background: linear-gradient(#000040, #000000) fixed ;
 	margin-bottom: 100px;
 }
