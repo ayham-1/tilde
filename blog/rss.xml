@@ -5,6 +5,16 @@
 <link>articles.ayham.xyz</link>
 <description>probably interesting stuff</description>
 <item>
+<title>A Minimal Linux Display Manager</title>
+<link>articles.ayham.xyz/a-minimal-linux-display-manager.html</link>
+<guid>articles.ayham.xyz/a-minimal-linux-display-manager.html</guid>
+<pubDate>Tue, 28 Dec 2021 20:45:00 +0300</pubDate>
+<description>There is this itch that tiling window manager users feel. Whether it is caused
+by surfing the world of reddit or the want for change, it might be useful to
+have a way to easily switch between window managers. This article shows how to
+achieve this using already installed applications on your system.</description>
+</item>
+<item>
 <title>My site is Now Installable as a Web App!</title>
 <link>articles.ayham.xyz/install-ayhamxyz-pwa.html</link>
 <guid>articles.ayham.xyz/install-ayhamxyz-pwa.html</guid>

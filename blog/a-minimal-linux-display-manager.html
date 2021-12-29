@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+		<head>
+				<title>A Minimal Linux Display Manager</title>
+				<link rel="stylesheet" href="../style.css">
+				<link rel="shortcut icon" type="image/jpg"
+				href="https://ayham.xyz/pix/pfp.ico"/>
+				<meta name="viewport" content="width=device-width, initial-scale=1">
+				
+				<script type="text/javascript" src="js/partials.js" async></script>
+				<link rel="preload" href="font.woff" as="font" type="font/woff" crossorigin="anonymous">
+		</head>
+		<body>
+<center>
+<h1 style=font-size:xxx-large>A Minimal Linux Display Manager</h1>
+</center>
+<div id=partial_header></div>
+<main>
+<p>There is this itch that tiling window manager users feel. Whether it is caused
+by surfing the world of reddit or the want for change, it might be useful to
+have a way to easily switch between window managers. This article shows how to
+achieve this using already installed applications on your system.</p>
+
+<h1>A BASH on the head.</h1>
+
+<p>On most <em>sane</em> Linux distributions, BASH is provided as a default shell script
+interpreter, I will be using that. When I said minimal, I meant <em>minimal</em>. With
+barely 38 lines, I know no other contestant. For a bonus, I will also use
+<code>sx</code> &amp; <code>ssh-agent</code>.</p>
+
+<pre><code>#!/bin/bash
+
+DwmOption="DWM"
+EXWMOption="EXWM"
+MATEOption="MATE"
+EnlightenmentOption="Enlightenment"
+ConsoleOption="Console"
+menu=("$DwmOption" "$EXWMOption" "$MATEOption" "$EnlightenmentOption" "$ConsoleOption")
+
+echo "Which WM would you like to run?"
+select opt in "${menu[@]}"
+do
+    case $opt in 
+        $DwmOption)
+            exec ssh-agent sx sh ~/.config/X11/dwm-xinit 
+            break
+            ;;
+        $EXWMOption)
+            exec ssh-agent sx sh ~/.config/X11/exwm
+            break
+            ;;
+        $MATEOption)
+            exec ssh-agent sx mate-session
+            break
+            ;;
+        $EnlightenmentOption)
+            exec ssh-agent sx sh ~/.config/X11/enlightenment
+            break
+            ;;
+        $ConsoleOption)
+            exec zsh
+            break
+            ;;
+        *) echo "invalid option $REPLY"
+    esac
+done
+</code></pre>
+
+<p>That&rsquo;s it! For adding extra entries:</p>
+
+<ul>
+<li>create a new &lsquo;Option&rsquo; variable,</li>
+<li>then add it to the <code>menu</code> array,</li>
+<li>adding the extra option to the &lsquo;cases&rsquo; clause appropriately.</li>
+</ul>
+
+
+<p>Enjoy!</p>
+<center>
+	Unique Users:
+<a href="https://www.digits.net" target="_blank" rel="noopener">
+    <img src="https://counter.digits.net/?counter={a6716c2f-04eb-a304-452c-7a2b69889a6f}&template=simple" 
+     alt="Hit Counter by Digits" border="0"  />
+  </a>
+</center>
+</main>
+<div align=center id=partial_footer></div>
+</body>
+</html>

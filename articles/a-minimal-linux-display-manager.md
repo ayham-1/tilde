@@ -11,7 +11,6 @@ interpreter, I will be using that. When I said minimal, I meant *minimal*. With
 barely 38 lines, I know no other contestant. For a bonus, I will also use 
 ```sx``` & ```ssh-agent```.
 
-
 ```
 #!/bin/bash
 
@@ -52,8 +51,9 @@ done
 ```
 
 That's it! For adding extra entries:
-1. create a new 'Option' variable, 
-2. then add it to the ```menu``` array,
-3. adding the extra option to the 'cases' clause appropriately.
 
-- Enjoy!
+- create a new 'Option' variable, 
+- then add it to the ```menu``` array,
+- adding the extra option to the 'cases' clause appropriately.
+
+Enjoy!
