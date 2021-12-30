@@ -1,5 +1,5 @@
 :root {
-	--genwidth: 850px ;
+	--genwidth: 40em;
 	--navwidth: 175px ;
 	--fg: #ddd ;
 	--altfg: #ccc ;
@@ -22,7 +22,7 @@ body {
 body h1 {
 	color: var(--fg);
 }
-main {
+.content {
 	margin: auto;
 	color: var(--fg);
 	background: var(--bg);
@@ -30,15 +30,28 @@ main {
 	border: dashed 1px var(--bordercolor);
 	border-radius: 5px;
 }
+main {
+	padding: 1em;
+	padding-top: 0;
+	display: block;
+	overflow:hidden;
+	margin:auto;
+}
+#partial_header {
+	float:right;
+	display:block;
+}
 nav,footer {
 	text-align: center ;
 	font-variant: small-caps ;
 	clear: both ;
 	background: var(--altbg) ;
 	border-radius: 5px ;
-	margin: auto ;
 	border: dashed 1px var(--bordercolor) ;
-	max-width: var(--genwidth) ;
+	max-width: var(--genwidth);
+}
+nav {
+	margin-left: 5px;
 }
 footer {
 	color: var(--altfg) ;
@@ -49,12 +62,28 @@ nav,header {
 	max-width: var(--genwidth) ;
 }
 nav li,footer li {
-	display: inline-block ;
+	transition:all 1s ease-in-out;
+	display: block ;
 	list-style: none ;
 	background: var(--bg) ;
 	border-radius: 10px ;
 	padding: .5em ;
-	max-width: 7em ;
+}
+nav {
+	width: 4em;
+}
+.hidden {
+	display: none;
+}
+nav ul li:hover .hidden {
+	display: inline-block;
+}
+nav ul li:hover {
+	margin-right: -5em;
+}
+nav ul {
+	align-items: flex-start;
+	display: flex-container;
 }
 
 nav ul, footer ul, #taglist {
@@ -131,19 +160,9 @@ td {
 	nav {
 		float: left ;
 		vertical-align: middle ;
-		width: 175px ;
 		position: fixed ;
 		text-align: left ;
 		font-size: large ;
-	}
-	nav::before {
-		content: "Links" ;
-		text-align: center ;
-		display: block ;
-		font-size: large ;
-		color: violet ;
-		text-decoration: underline ;
-		margin-top: .5em ;
 	}
 	nav li {
 		display: block ;
@@ -177,7 +196,7 @@ ul.images li img {
 	padding: 2.5px;
 }
 
-@media (min-width: 55em) {
+@media (min-width: 40em) {
 	.resright, .disappear {
 		display: block ;
 		float: right;

@@ -57,3 +57,5 @@ That's it! For adding extra entries:
 - adding the extra option to the 'cases' clause appropriately.
 
 Enjoy!
+
+;Tags: LINUX GUIDE

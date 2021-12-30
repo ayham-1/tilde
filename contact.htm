@@ -6,36 +6,34 @@
 		<link rel="shortcut icon" type="image/jpg" href="pix/pfp.ico"/>
 		<link rel='alternate' type='application/rss+xml' title='ayham RSS' href='/blog/rss.xml'>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-		<script type="text/javascript">
-			$(document).ready(function() { 
-							$("#partial_header").load("partials/header.htm");
-							$("#partial_footer").load("partials/footer.htm"); }); 
-		</script>
+
+		<script type="text/javascript" src="js/partials.js" async></script>
 	</head>
 	<body>
 		<center>
 			<h1 style=font-size:xxx-large>Contact</h1>
 		</center>
-		<div id="partial_header"></div>
 		<main>
-			<p>I don't own any account on any social media platforms.</p>
-			<p>My monero wallet is linked with ayham.xyz and my main email.
-			</br>
-			<section>
-				<ul>
-					<li>Emails (ordered by preference):</li>
+			<div id="partial_header"></div>
+			<div class=content>
+				<p>I don't own any account on any social media platforms.</p>
+				<p>My monero wallet is linked with ayham.xyz and my main email.
+				</br>
+				<section>
 					<ul>
-						<li>&lt;ayham [:a+t:] ayham.xyz&gt; (GPG: <a href="data/ayham.gpg">C92301672BB229</a>)</li>
-						<li>&lt;altffour [:a+t:] protonmail.com&gt; (GPG: <a href="data/ayham.gpg">C92301672BB229</a>)</li>
-						<li>&lt;ayhamaboualfadl [:a+t:] gmail.com&gt; (GPG: <a href="data/ayham.gpg">C92301672BB229</a>)</li>
+						<li>Emails (ordered by preference):</li>
+						<ul>
+							<li>&lt;ayham [:a+t:] ayham.xyz&gt; (GPG: <a href="data/ayham.gpg">C92301672BB229</a>)</li>
+							<li>&lt;altffour [:a+t:] protonmail.com&gt; (GPG: <a href="data/ayham.gpg">C92301672BB229</a>)</li>
+							<li>&lt;ayhamaboualfadl [:a+t:] gmail.com&gt; (GPG: <a href="data/ayham.gpg">C92301672BB229</a>)</li>
+						</ul>
 					</ul>
-				</ul>
-			</section>
-			</p>
-			<p>If you would like to recommend a platform for me to use, feel
-			free to email me!</p>
+				</section>
+				</p>
+				<p>If you would like to recommend a platform for me to use, feel
+				free to email me!</p>
+			</div>
+			<div id="partial_footer"></div>
 		</main>
-		<div id="partial_footer"></div>
 	</body>
 </html>

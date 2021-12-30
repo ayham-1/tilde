@@ -5,91 +5,89 @@
 		<link rel="stylesheet" href="style.css">
 		<link rel="shortcut icon" type="image/jpg" href="pix/pfp.ico"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-		<script type="text/javascript">
-			$(document).ready(function() { 
-							$("#partial_header").load("partials/header.htm");
-							$("#partial_footer").load("partials/footer.htm"); }); 
-		</script>
+
+		<script type="text/javascript" src="js/partials.js" async></script>
 	</head>
 	<body>
 		<center>
 			<h1 style=font-size:xxx-large>Setup</h1>
 		</center>
-		<div id="partial_header"></div>
 		<main>
-			<section>
-				<h3>Introduction</h3>
-				<p>This is how I run my desktop. It is the only way any personal
-				desktop should work based on my rationale. If you would like to
-				recommend or comment on my setup contact me <a href="https://contact.ayham.xyz">here</a>.</p>
-			</section>
+			<div id="partial_header"></div>
+			<div class=content>
+				<section>
+					<h3>Introduction</h3>
+					<p>This is how I run my desktop. It is the only way any personal
+					desktop should work based on my rationale. If you would like to
+					recommend or comment on my setup contact me <a href="https://contact.ayham.xyz">here</a>.</p>
+				</section>
 
-			<section>
-				<h3>Software</h3>
-				<p>I like to keep it <a href="https://suckless.org">suckless</a>,
-				ofcourse only when it makes sense to do so. The only
-				systemd-less distro that is usable is
-				<a href="https://artixlinux.org">Artix linux</a>.</p>
-				<ul>
-					<li>dwm</li>
-					<li>dmenu</li>
-					<li>surf</li>
-					<li>slock</li>
-					<li>slstatus</li>
-				</ul>
-				<p>...and for non-suckless stuff:</p>
-				<ul>
-					<li>alacritty</li>
-					<li>firefox</li>
-					<li>brave</li>
-					<li>baku</li>
-					<li>newsboat</li>
-					<li>mpd & ncmpcpp</li>
-					<li>bpytop</li>
-					<li>neovim</li>
-					<li>pywal</li>
-					<li>sxiv</li>
-					<li>zathura</li>
-					<li>thunar</li>
-				</ul>
-				<p>Lastly, security (includes non-software):</p>
-				<ul>
-					<li>firejail</li>
-					<li>apparmor</li>
-					<li>hardened-linux kernel</li>
-					<li>luks2 encrypted main partition (root,
-						swap, data on lvm over luks)</li>
-					<li>luks1 encrypted /boot parition</li>
-				</ul>
-				<p>There are scripts I use for choosing
-				startup application on login and
-				organizing them into their specified workspaces,
-				and scripts for searching the web,
-				bookmarks; from the comfort of dwm &
-				dmenu. Those scripts can be found
-				<a href="https://tildegit.org/ayham/dotfiles/src/branch/master/.local/bin">here</a>.</p>
-			</section>
-			<section>
-				<h3>Screenshots</h3>
-				<p>
-				<img src="pix/setup/screenshot1.webp"
-					 alt="desktop_flex1"
-					 style="max-width:100%;">
-				<img src="pix/setup/screenshot2.webp"
-					 alt="desktop_flex2"
-					 style="max-width:100%;">
-				</p>
-				<img src="pix/setup/screenshot3.webp"
-					 alt="desktop_flex3"
-					 style="max-width:100%;">
-				</p>
-				<img src="pix/setup/screenshot4.webp"
-					 alt="desktop_flex4"
-					 style="max-width:100%;">
-				</p>
-			</section>
+				<section>
+					<h3>Software</h3>
+					<p>I like to keep it <a href="https://suckless.org">suckless</a>,
+					ofcourse only when it makes sense to do so. The only
+					systemd-less distro that is usable is
+					<a href="https://artixlinux.org">Artix linux</a>.</p>
+					<ul>
+						<li>dwm</li>
+						<li>dmenu</li>
+						<li>surf</li>
+						<li>slock</li>
+						<li>slstatus</li>
+					</ul>
+					<p>...and for non-suckless stuff:</p>
+					<ul>
+						<li>alacritty</li>
+						<li>firefox</li>
+						<li>brave</li>
+						<li>baku</li>
+						<li>newsboat</li>
+						<li>mpd & ncmpcpp</li>
+						<li>bpytop</li>
+						<li>neovim</li>
+						<li>pywal</li>
+						<li>sxiv</li>
+						<li>zathura</li>
+						<li>thunar</li>
+					</ul>
+					<p>Lastly, security (includes non-software):</p>
+					<ul>
+						<li>firejail</li>
+						<li>apparmor</li>
+						<li>hardened-linux kernel</li>
+						<li>luks2 encrypted main partition (root,
+							swap, data on lvm over luks)</li>
+						<li>luks1 encrypted /boot parition</li>
+					</ul>
+					<p>There are scripts I use for choosing
+					startup application on login and
+					organizing them into their specified workspaces,
+					and scripts for searching the web,
+					bookmarks; from the comfort of dwm &
+					dmenu. Those scripts can be found
+					<a href="https://tildegit.org/ayham/dotfiles/src/branch/master/.local/bin">here</a>.</p>
+				</section>
+				<section>
+					<h3>Screenshots</h3>
+					<p>
+					<img src="pix/setup/screenshot1.webp"
+						 alt="desktop_flex1"
+						 style="max-width:100%;">
+					<img src="pix/setup/screenshot2.webp"
+						 alt="desktop_flex2"
+						 style="max-width:100%;">
+					</p>
+					<img src="pix/setup/screenshot3.webp"
+						 alt="desktop_flex3"
+						 style="max-width:100%;">
+					</p>
+					<img src="pix/setup/screenshot4.webp"
+						 alt="desktop_flex4"
+						 style="max-width:100%;">
+					</p>
+				</section>
+			</div>
+			<div id="partial_footer"></div>
 		</main>
-		<div id="partial_footer"></div>
 	</body>
 </html>
