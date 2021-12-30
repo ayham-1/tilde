@@ -1,0 +1,130 @@
+#partial_header {
+	float:right;
+	display:block;
+}
+nav {
+	text-align: center ;
+	font-variant: small-caps ;
+	clear: both ;
+	background: var(--altbg) ;
+	border-radius: 5px ;
+	border: dashed 1px var(--bordercolor) ;
+	max-width: var(--genwidth);
+}
+nav {
+	margin-left: 5px;
+}
+nav,header {
+	max-width: var(--genwidth) ;
+}
+nav li {
+	transition:all 1s ease-in-out;
+	display: block ;
+	list-style: none ;
+	background: var(--bg) ;
+	border-radius: 10px ;
+	padding: .5em ;
+}
+nav {
+	width: 4em;
+}
+.hidden {
+	display: none;
+}
+nav ul li:hover .hidden {
+	display: inline-block;
+}
+nav ul li:hover {
+	margin-right: -5em;
+}
+nav ul {
+	align-items: flex-start;
+	display: flex-container;
+}
+
+nav ul, #taglist {
+	padding: 0;
+	margin: .5em;
+}
+a {
+	color: #36f433;
+	text-decoration: none;
+}
+a:hover {
+	font-style: italic;
+}
+#partial_header a:hover {
+	font-style: normal;
+}
+#partial_header a li:hover {
+	font-style: italic;
+}
+dt img {
+	max-height: 1em;
+	max-width: 1em;
+	vertical-align: middle;
+}
+nav li img {
+	max-height: 1em;
+	max-width: 1em;
+	vertical-align: middle;
+}
+
+nav a:hover li, #tagcloud a:hover li {
+	background: steelblue ;
+	color: black ;
+	box-shadow: 2px 2px cyan ;
+}
+
+/* This should be genwidth + (navwidth*2) + padding */
+@media (min-width: 1200px) {
+	nav {
+		float: left ;
+		vertical-align: middle ;
+		position: fixed ;
+		text-align: left ;
+		font-size: large ;
+	}
+	nav li {
+		display: block ;
+		text-align: center ;
+		margin: .5em auto ;
+	}
+
+}
+
+@media (min-width: 40em) {
+	.resright, .disappear {
+		display: block ;
+		float: right;
+		padding: 20px ;
+		clear: both ;
+		max-height: 300px ;
+		max-width: 300px ;
+	}
+	.resmid {
+		max-height: 300px ;
+		max-width: 300px ;
+	}
+	main {
+		max-width: var(--genwidth) ;
+	}
+	tr, td {
+		display: table-cell;
+	}
+	td {
+		float: none;
+	}
+	ul.images {
+		display: flex;
+		flex-direction: row;
+		margin: 0;
+		padding: 0;
+		width: 25em;
+		overflow-x: auto;
+
+		list-style-type: none;
+		transition: -webkit-transform 0.25s ease;
+		transition: transform 0.25s ease;
+	}
+}
