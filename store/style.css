@@ -37,6 +37,25 @@ main {
 	overflow:hidden;
 	margin:auto;
 }
+nav {
+		width: 4em;
+	}
+	.hidden {
+		display: none;
+	}
+	nav li {
+		float: none;
+	}
+	nav ul li:hover .hidden {
+		display: inline-block;
+	}
+	nav ul li:hover {
+		margin-right: -5em;
+	}
+	nav ul {
+		align-items: flex-start;
+		display: flex-container;
+	}
 #partial_header {
 	float:right;
 	display:block;
@@ -49,6 +68,10 @@ nav,footer {
 	border-radius: 5px ;
 	border: dashed 1px var(--bordercolor) ;
 	max-width: var(--genwidth);
+	display: block;
+}
+nav ul li a {
+	display: block;
 }
 nav {
 	margin-left: 5px;
@@ -62,30 +85,12 @@ nav,header {
 	max-width: var(--genwidth) ;
 }
 nav li,footer li {
-	transition:all 1s ease-in-out;
 	display: block ;
 	list-style: none ;
 	background: var(--bg) ;
 	border-radius: 10px ;
 	padding: .5em ;
 }
-nav {
-	width: 4em;
-}
-.hidden {
-	display: none;
-}
-nav ul li:hover .hidden {
-	display: inline-block;
-}
-nav ul li:hover {
-	margin-right: -5em;
-}
-nav ul {
-	align-items: flex-start;
-	display: flex-container;
-}
-
 nav ul, footer ul, #taglist {
 	padding: 0;
 	margin: .5em;
@@ -134,11 +139,18 @@ code {
 	overflow-wrap: break-word;
 }
 .resright {
+	display: none;
+	margin: auto;
+	max-width: 90%;
+	max-height: 300px;
+	float: none;
+}
+.reappear {
 	display: block;
 	margin: auto;
 	max-width: 90%;
 	max-height: 300px;
-	display: none;
+	float: none;
 }
 .bar {
 	color: greenyellow;
@@ -156,9 +168,8 @@ td {
 }
 
 /* This should be genwidth + (navwidth*2) + padding */
-@media (min-width: 1200px) {
+@media (min-width: 1200px) {	
 	nav {
-		float: left ;
 		vertical-align: middle ;
 		position: fixed ;
 		text-align: left ;
@@ -204,6 +215,9 @@ ul.images li img {
 		clear: both ;
 		max-height: 300px ;
 		max-width: 300px ;
+	}
+	.reappear {
+		display: none;
 	}
 	.resmid {
 		max-height: 300px ;
